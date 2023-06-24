@@ -1,0 +1,24 @@
+<div class="content">
+  <div class="row">
+    <div class="show-content-main">
+      <div class="sh-main">
+        <h1><%= @article.title %></h1>
+        <p><%= @article.content %></p>
+        <div class="sf-main">
+          <nav class="st-nav">
+            <%= link_to 'Edits', edit_article_path(@article), class: 'btn btn-outline-warning', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
+          </nav>
+          <nav class="st-nav">
+          <%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete }, class: 'btn btn-outline-danger', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
+          </nav>
+            <nav class="st-nav">
+            <%= link_to 'Back', articles_path, class: 'btn btn-outline-success', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
+          </nav>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<%= stylesheet_link_tag 'articles_show' %>

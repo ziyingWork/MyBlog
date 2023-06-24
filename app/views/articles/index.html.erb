@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="box article-container">
+      <div class="container-main-left">
+        
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
+            </div>
+            <div class="carousel-item">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
+            </div>
+            <div class="carousel-item">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      
+      </div>
+      <div class="container-main-right cm-style">
+        <div class="cmr-in" style="display: flex;">
+            <span class="span1" style="font-weight: bold; color: #1e9c10; font-size: 18px;">Article Category</span>
+            <span class="span2" style="font-size: 15px; color: #312f2f75; padding-top:2px; margin-left: 5px;">#Today's Tweets</span>
+        </div>
+
+        <h1 style="font-size: 35px;">TODO</h1>
+        
+      </div>
+   </div>
+  </div>
+  <div class="row">
+    <div class="box inverted-main-grid">
+      <table>
+          <% @articles.each do |article| %>
+            <tr>
+              <div class="show-main-acticles">
+                <h4 style="margin-bottom: 20px;"><%= article.title %></h4>
+                <p style="margin-bottom: 10px;"><%= article.content %></p>
+                <div class="show-acticles-in">
+                  <div class="div1"><%= image_tag("time.svg") %> Release Time </div>
+                  <div class="div2"><%= image_tag("visit.svg") %> Number of visits</div>
+                  <div class="div3"><%= image_tag("reply.svg") %> Number of reviews</div>
+                  <div class="div4"><%= image_tag("category.svg") %> Article Category</div>
+                  <div class="div5"><%= image_tag("user.svg") %> Published by</div>
+                  <div class="div6">
+                  <%= link_to 'Details', article_path(article), class: 'btn btn-outline-success', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
+                  <%= link_to 'Edits', edit_article_path(article), class: 'btn btn-outline-warning', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
+                  </div>
+                </div>
+              </div>
+            </tr>
+          <% end %>
+        </table>
+        <div class="show-main-footer">
+          <%= paginate @articles, theme: 'bootstrap-5' , pagination_class: "pagination-sm flex-wrap justify-content-center" %>
+      </div>
+      </div>
+
+
+  </div>
+  <%
+=begin%>
+ <div class="row">
+    <div class="box divider">
+      <div class="separator"></div>
+    
+    </div>
+  </div> 
+<%
+=end%>
+  <div class="row">
+    <div class="box main-grid"></div>
+  </div>
+</div>
+
+
+<style>
+.show-main-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-link {
+  color: black; /* 将颜色替换为您想要的颜色 */
+}
+
+
+
+</style>
+
+
+<%= stylesheet_link_tag 'articles_index' %>

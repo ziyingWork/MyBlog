@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyBlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <style>
+      body {
+            background-color: #f5f5f5;
+        }
+
+      footer {
+          padding: 10px;
+          display: flex;
+          justify-content: center; /* 水平方向居中对齐 */
+          align-items: center; /* 垂直方向居中对齐 */
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">MYBLOG</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+              <%= link_to 'HOME', articles_path, class: 'nav-link active' %>
+              </li>
+              <li class="nav-item">
+              <%= link_to 'ARTICLES', new_article_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">ABOUT</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">ARCHIVES</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">TAGS</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">MESSAGE</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">FRIENDS</a>
+              </li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  PHOTOALBUMS
+              </a>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+              </li>
+          </ul>
+          
+
+          <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="SEARCH" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">SEARCH</button>
+          </form>
+          <span class="navbar-text" style="margin-left: 10px; " >
+              <button type="button" class="btn btn-light">LOGIN</button>
+          </span>
+          </div>
+      </div>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer class="blockquote-footer">
+      Basic Webpage. &copy; 2023  All rights reserved.
+    </footer>  
+  </body>
+</html>
