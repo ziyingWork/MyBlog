@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="signup-form">
+        <h1 style="font-size:33px; margin-bottom:8px; color: #4CAF50;">Registration</h1>
+        <%= form_for @account do |f| %>
+            <div class="mb-3">
+                <%= f.label :name, "Name", class: "form-label fs-5"  %>
+                <%= f.text_field :name , placeholder: "Darling, enter your name", class: "form-control"%>
+            </div>
+
+            <div class="mb-3">
+                <%= f.label :email, "Email", class: "form-label fs-5"  %>
+                <%= f.email_field :email, placeholder: "xxx.@sina.com", class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+                <%= f.label :password, "Password", class: "form-label fs-5"  %>
+                <%= f.email_field :password, placeholder: "Please enter your password", class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+                <%= f.label :email, "Verification", class: "form-label fs-5"  %>
+                <%= f.email_field :email, placeholder: "Please enter again", class: "form-control" %>
+            </div>
+
+            <div class="mb-3">
+                <%= f.label :role, "Roles", class: "form-label fs-5", style:"margin-right:8px;"%>
+                <%= f.select :role ,options_for_select(Account.roles.map { |key, value| [value, key] })%>
+            </div>
+            <div class="mine-submit">
+                <%= f.submit class: "btn btn-success", value: "Register" %>
+            </div>    
+        <% end %>
+    </div>
+</div>
+
+<%= stylesheet_link_tag 'accounts_signup' %>

@@ -9,16 +9,40 @@
             <%= link_to 'Edits', edit_article_path(@article), class: 'btn btn-outline-warning', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
           </nav>
           <nav class="st-nav">
-          <%= link_to 'Delete', article_path(@article), data: { "turbo-method": :delete }, class: 'btn btn-outline-danger', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
+          <%= link_to 'Delete', article_path(@article), data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?'},  class: 'btn btn-outline-danger', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
           </nav>
             <nav class="st-nav">
             <%= link_to 'Back', articles_path, class: 'btn btn-outline-success', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
           </nav>
         </div>
       </div>
-      
+
     </div>
   </div>
-  
+
 </div>
+<div class="comment">
+  <div class="row">
+    <div class="show-comment-main">
+      <div class="scm-comment">
+        <h4 class="st-underline">COMMENTS</h4>
+        <div class="comment-content">
+          <%= form_for([@article, @article.comments.build]) do |f| %>
+            <div class="mb-3">
+              <%= f.text_area :body, placeholder: "Please enter your comment.", class: "form-control", rows: "4"%> 
+            </div>
+            <div class="comment-container">
+              <%= f.submit  class: "btn btn-primary", value: "Add Comment", style: "margin-left: auto;"%>
+            </div>
+            </p>
+          <% end %>
+        </div>
+      
+      <div>
+
+    </div> 
+  </div>     
+</div>
+
+
 <%= stylesheet_link_tag 'articles_show' %>
