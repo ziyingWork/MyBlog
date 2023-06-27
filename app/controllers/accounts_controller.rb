@@ -7,13 +7,13 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = Account.new(account_params)
+    # @account = Account.new(account_params)
     puts "account:#{@account}"
   end
 
     private
       def account_params
-        params.require(:account).permit(:name, :email)
+        params.require(:account).permit(:name, :email, :password, :role)
       end
 
 

@@ -23,9 +23,20 @@ gem "importmap-rails"
 
 gem 'bootstrap', '~> 5.2.0'
 
+gem 'bcrypt'
+
+# Use jquery as the JavaScript librar
+gem 'jquery-rails'
+
+# Use jquery-ui for pretty UI
+gem 'jquery-ui-rails'
+
+# Use Sass to process CSS
+gem "sassc-rails"
+
 gem 'kaminari'
 
-  gem 'bootstrap5-kaminari-views'
+gem 'bootstrap5-kaminari-views'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"

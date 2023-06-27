@@ -15,17 +15,17 @@
 
             <div class="mb-3">
                 <%= f.label :password, "Password", class: "form-label fs-5"  %>
-                <%= f.email_field :password, placeholder: "Please enter your password", class: "form-control" %>
+                <%= f.password_field :password, placeholder: "Please enter your password", class: "form-control" %>
             </div>
 
             <div class="mb-3">
-                <%= f.label :email, "Verification", class: "form-label fs-5"  %>
-                <%= f.email_field :email, placeholder: "Please enter again", class: "form-control" %>
+                <%= f.label :password_confirmation, "Verification", class: "form-label fs-5"  %>
+                <%= f.password_field :password_confirmation, placeholder: "Please enter again", class: "form-control" %>
             </div>
 
             <div class="mb-3">
                 <%= f.label :role, "Roles", class: "form-label fs-5", style:"margin-right:8px;"%>
-                <%= f.select :role ,options_for_select(Account.roles.map { |key, value| [value, key] })%>
+                <%= f.select :role ,options_for_select(Account.roles.map { |key, value| [key, value] })%>
             </div>
             <div class="mine-submit">
                 <%= f.submit class: "btn btn-success", value: "Register" %>
@@ -35,3 +35,5 @@
 </div>
 
 <%= stylesheet_link_tag 'accounts_signup' %>
+
+<%= javascript_include_tag 'accounts_signup_pre' %>

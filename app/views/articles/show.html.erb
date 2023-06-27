@@ -27,7 +27,9 @@
       <div class="scm-comment">
         <h4 class="st-underline">COMMENTS</h4>
         <div class="comment-content">
-          <%= form_for([@article, @article.comments.build]) do |f| %>
+          <%
+=begin%>
+ <%= form_for(@article) do |f| %>
             <div class="mb-3">
               <%= f.text_area :body, placeholder: "Please enter your comment.", class: "form-control", rows: "4"%> 
             </div>
@@ -35,7 +37,9 @@
               <%= f.submit  class: "btn btn-primary", value: "Add Comment", style: "margin-left: auto;"%>
             </div>
             </p>
-          <% end %>
+          <% end %> 
+<%
+=end%>
         </div>
       
       <div>
