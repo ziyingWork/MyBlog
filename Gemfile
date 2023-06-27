@@ -10,9 +10,6 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
 gem "mysql2"
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -25,7 +22,7 @@ gem 'bootstrap', '~> 5.2.0'
 
 gem 'kaminari'
 
-  gem 'bootstrap5-kaminari-views'
+gem 'bootstrap5-kaminari-views'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"

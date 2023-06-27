@@ -3,12 +3,11 @@ class AccountsController < ApplicationController
   end
 
   def signup
-    @account = Account.new # 或者从数据库中获取相应的Account对象
+    @account = Account.new
   end
 
   def create
     @account = Account.new(account_params)
-    puts "account:#{@account}"
   end
 
     private
