@@ -1,3 +1,6 @@
+# 数据库配置（一般所有的配置），都不用写在代码提交。
+# 一般在部署后在服务器上直接配置
+# 可以提交一个示例文件，database.yml.example
 default: &default
   adapter: mysql2
   encoding: utf8

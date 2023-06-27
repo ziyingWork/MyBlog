@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def login
+    # 开发中的代码可以切一个分支出来提交，不要提交到 master
     # username = params[:username]
     # password = params[:password]
     # puts "!!!!!!!!!!!!#{username}"

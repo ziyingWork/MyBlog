@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    # 重复的代码试试抽共通
     @article = Article.find(params[:id])
   end  
 

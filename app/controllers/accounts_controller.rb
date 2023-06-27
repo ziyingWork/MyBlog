@@ -8,9 +8,11 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(account_params)
+    # 调试代码不要提交到主分支
     puts "account:#{@account}"
   end
 
+  # 代码风格可以试试 gem: rubocop
     private
       def account_params
         params.require(:account).permit(:name, :email)
