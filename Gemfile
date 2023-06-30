@@ -12,6 +12,8 @@ gem "sprockets-rails"
 
 gem "mysql2"
 
+gem 'rubocop', '~> 1.53', require: false
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -19,6 +21,20 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 gem 'bootstrap', '~> 5.2.0'
+
+# Use jquery as the JavaScript librar
+gem 'jquery-rails'
+
+# Use jquery-ui for pretty UI
+gem 'jquery-ui-rails'
+
+# Use Sass to process CSS
+gem "sassc-rails"
+
+gem 'bcrypt'
+
+# HTTP-Client
+gem 'rest-client'
 
 gem 'kaminari'
 

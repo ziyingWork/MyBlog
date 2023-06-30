@@ -1,5 +1,8 @@
 
 <div class="container">
+    <% if @account.errors.any? %>
+        <%= render partial: 'error_msg', locals: { errors: @account.errors } %>
+    <% end %>   
     <div class="signup-form">
         <h1 style="font-size:33px; margin-bottom:8px; color: #4CAF50;">Registration</h1>
         <%= form_for @account do |f| %>
@@ -15,23 +18,30 @@
 
             <div class="mb-3">
                 <%= f.label :password, "Password", class: "form-label fs-5"  %>
-                <%= f.email_field :password, placeholder: "Please enter your password", class: "form-control" %>
+                <%= f.password_field :password, placeholder: "Please enter your password", class: "form-control" %>
             </div>
 
             <div class="mb-3">
-                <%= f.label :email, "Verification", class: "form-label fs-5"  %>
-                <%= f.email_field :email, placeholder: "Please enter again", class: "form-control" %>
+                <%= f.label :password_confirmation, "Verification", class: "form-label fs-5"  %>
+                <%= f.password_field :password_confirmation, placeholder: "Please enter again", class: "form-control" %>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 mb-special">
                 <%= f.label :role, "Roles", class: "form-label fs-5", style:"margin-right:8px;"%>
-                <%= f.select :role ,options_for_select(Account.roles.map { |key, value| [value, key] })%>
+                <%= f.select :role ,options_for_select(Account.roles.map { |key, value| [key, value] })%>
             </div>
+            <div id="st-mess" class="form-error"></div>
             <div class="mine-submit">
-                <%= f.submit class: "btn btn-success", value: "Register" %>
+                <%= f.submit class: "btn btn-outline-success", value: "Register", 
+                style: "--bs-btn-padding-y: .46rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .895rem;" %>
+                <%= link_to 'Login', accounts_login_path, class: "btn btn-outline-secondary", 
+                style: "--bs-btn-padding-y: .46rem; --bs-btn-padding-x: 1.1rem; --bs-btn-font-size: .895rem; margin-left: 10px;"%> 
+                
+          </div>    
             </div>    
-        <% end %>
+        <% end %> 
     </div>
 </div>
+
 
 <%= stylesheet_link_tag 'accounts_signup' %>

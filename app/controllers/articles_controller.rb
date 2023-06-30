@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all.page(params[:page]).per(5)
-    puts "ssssss#{@articles.inspect}"
   end
 
   def show

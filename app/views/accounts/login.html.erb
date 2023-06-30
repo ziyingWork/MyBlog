@@ -1,57 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login Page</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    
-    .login-form {
-      width: 300px;
-      padding: 30px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      background-color: #f9f9f9;
-    }
-    
-    .login-form input[type="text"],
-    .login-form input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      box-sizing: border-box;
-    }
-    
-    .login-form .btn {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+<div class="container">
+    <div class="error-msg">
+      <p style="color: red;"><%= flash[:error] %></p> 
+    </div>
+    <div class="login-form">
+        <h1 style="font-size:33px; margin-bottom:8px; color: #4CAF50;">Login</h1>
+        <%= form_tag login_method_path, method: :post  do |f| %>
+          <div class="mb-3">
+            <%= label_tag :email, "Email", class: "form-label fs-5"  %>
+            <%= email_field_tag :email, "",placeholder: "xxx.@sina.com", class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= label_tag :password, "Password", class: "form-label fs-5"  %>
+            <%= password_field_tag :password, "",placeholder: "Enter password",class: "form-control" %>
+          </div>
+          <div class="mb-3 st-code">
+            <div class="st-left">
+              <%= text_field_tag :verification_code, "",placeholder: "Verification Code", class: "form-control" , disabled: true%>
+            </div>
+            <div class="st-right">
+              <div class="st-in-left"></div>
+              <div class="st-in-right"></div>
+            </div>
+          </div>
+          <div class="mine-submit">
+            <%= submit_tag  "Login", class: "btn btn-outline-success", 
+            style: "--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.1rem; --bs-btn-font-size: .9rem;" %>
+            <%= link_to 'Register', accounts_signup_path, class: "btn btn-outline-secondary" ,
+            style: "--bs-btn-padding-y: .46rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .895rem; margin-left: 10px;" %> 
+          </div>    
+        <% end %> 
+    </div>
+</div>
 
-    .login-form h2 {
-      margin-bottom: 20px;
-    }
-
-
-  </style>
-</head>
-<body>
-  <div class="login-form">
-    <h2>Login</h2>
-    <%= form_with(url: login_path, method: :post) do |form| %>
-      <%= form.text_field :username, placeholder: 'Username', required: true %>
-      <%= form.password_field :password, placeholder: 'Password', required: true %>
-      
-      <%= form.submit 'Login', class: 'btn' %>
-    <% end %>
-  </div>
-</body>
-</html>
+<%= stylesheet_link_tag 'accounts_login' %>

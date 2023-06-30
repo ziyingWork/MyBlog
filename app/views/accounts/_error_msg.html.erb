@@ -1,0 +1,11 @@
+<div class="error-msg">
+  <h5 style="color: red;">
+    <%= pluralize(errors.count, "error") %>
+    prohibited this article from being saved:
+  </h5>
+  <ul>
+    <% errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>

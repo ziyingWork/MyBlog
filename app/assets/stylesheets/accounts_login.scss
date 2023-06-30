@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 3%;
+}
+
+.login-form {
+  width: 400px;
+  padding: 3%;
+  margin: 3%;
+  border: 2px solid #4CAF50;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+      
+}
+
+.mb-special {
+  margin-bottom: 2px !important;
+}
+
+.form-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 3px;
+}
+  
+
+.mine-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px; 
+}
+
+.st-code {
+  padding-top: 10px;
+  display: flex;
+}
+
+.st-left {
+  flex: 1;
+}
+
+.st-right {
+  flex: 1;
+  display: flex;
+}
+
+.st-in-left , .st-in-right {
+  flex: 1;
+}
+
+// .btn .btn-outline-success {
+//   // --bs-btn-padding-y: .5rem;
+//   // --bs-btn-padding-x: 1.1rem;
+//   // --bs-btn-font-size: .9rem;
+// }
+
+// .btn .btn-outline-secondary {
+//   // --bs-btn-padding-y: .46rem;
+//   // --bs-btn-padding-x: .5rem;
+//   // --bs-btn-font-size: .895rem;
+//   margin-left: 10px;
+// }

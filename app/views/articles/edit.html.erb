@@ -5,15 +5,7 @@
         <h3 style="margin-bottom: 20px;">UPDATE YOUR ARTICLES</h3>
 
         <%= form_for :article, url: articles_path  do |f| %>
-        <div class="mb-3">
-          <%= f.label :title, "Title", class: "form-label fs-5" %>
-          <%= f.text_field :title, placeholder: "Please enter your title", class: "form-control"%>
-          <div id="emailHelp" class="form-text">We will share your article in our blog.</div>
-        </div>
-        <div class="mb-3">
-          <%= f.label :content, "Content", class: "form-label fs-5" %>
-          <%= f.text_area :content, placeholder: "Please enter your articles", class: "form-control"%>
-        </div>
+        <%= render 'form', f: f %>
         <%= f.submit class: "btn btn-primary", value: "Update Content"%>
         <%= link_to 'Cancel', articles_path, class: "btn btn-primary", style: 'margin-left: 10px;'%> 
       <% end %>

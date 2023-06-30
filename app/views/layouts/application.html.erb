@@ -52,7 +52,7 @@
               <a class="nav-link" href="#">MESSAGE</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="#">FRIENDS</a>
+              <a class="nav-link" href="#">TRANSLATION</a>
               </li>
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -73,7 +73,7 @@
               <button class="btn btn-outline-success" type="submit">SEARCH</button>
           </form>
           <span class="navbar-text" style="margin-left: 10px; " >
-              <button type="button" class="btn btn-light">LOGIN</button>
+              <%= link_to 'LOGIN', accounts_login_path, class: 'btn btn-light' %>
           </span>
           </div>
       </div>

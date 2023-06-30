@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_141315) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_28_065206) do
   create_table "accounts", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.integer "role"
     t.integer "status"
     t.datetime "created_at", null: false
