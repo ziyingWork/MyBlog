@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :login_validity
+
   def index
     @articles = Article.all.page(params[:page]).per(5)
   end

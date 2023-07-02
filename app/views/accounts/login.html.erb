@@ -4,7 +4,7 @@
     </div>
     <div class="login-form">
         <h1 style="font-size:33px; margin-bottom:8px; color: #4CAF50;">Login</h1>
-        <%= form_tag login_method_path, method: :post  do |f| %>
+        <%= form_tag login_method_path, method: :post  do %>
           <div class="mb-3">
             <%= label_tag :email, "Email", class: "form-label fs-5"  %>
             <%= email_field_tag :email, "",placeholder: "xxx.@sina.com", class: "form-control" %>

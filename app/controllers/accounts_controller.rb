@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+
   def login
     render "accounts/login"
   end
@@ -37,6 +38,7 @@ class AccountsController < ApplicationController
       else
         if user.authenticate(pwd)
           puts "密码正确"
+          session[:account_id] = user.id
           redirect_to articles_path
         else
           flash[:error] = "Incorrect password."
@@ -44,6 +46,11 @@ class AccountsController < ApplicationController
         end
       end   
     end
+  end
+
+  def logout_method
+    session.delete(:account_id)
+    redirect_to accounts_login_path
   end
 
 

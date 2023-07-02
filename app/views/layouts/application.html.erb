@@ -72,10 +72,18 @@
               <input class="form-control me-2" type="search" placeholder="SEARCH" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">SEARCH</button>
           </form>
-          <span class="navbar-text" style="margin-left: 10px; " >
-              <%= link_to 'LOGIN', accounts_login_path, class: 'btn btn-light' %>
-          </span>
+          <% unless check_login %>
+            <span class="navbar-text" style="margin-left: 10px; " >
+                <%= link_to 'LOGIN', accounts_login_path, class: 'btn btn-light' %>
+            </span>
+          <% else %>
+            <span class="navbar-text" style="margin-left: 10px; " >
+                <%= link_to 'LOGOUT', logout_method_path, class: 'btn btn-light' %>
+            </span>
+            <div><span style="margin-left: 10px; font-weight: bold;">User: <%= check_login.name %> </span></div>
+          <% end %>
           </div>
+
       </div>
       </nav>
     </header>
