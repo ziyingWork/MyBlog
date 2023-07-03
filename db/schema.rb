@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_28_065206) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_02_122758) do
   create_table "accounts", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -26,6 +26,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_065206) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "account_id"
+    t.integer "as_type"
+    t.integer "status"
   end
 
   create_table "comments", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|

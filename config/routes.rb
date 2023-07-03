@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   # get 'articles/lll', to: 'articles#lll'
   # post '/login', to: 'users#login', as: 'login'
   # Defines the root path route ("/")
-  # root "articles#index"
-  root "accounts#login"
+  root "articles#index"
+  # root "accounts#login"
   resources :articles 
   resources :accounts
 end

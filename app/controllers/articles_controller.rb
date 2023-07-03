@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :login_validity
+  before_action :login_validity, except:[:index]
 
   def index
     @articles = Article.all.page(params[:page]).per(5)
@@ -44,8 +44,6 @@ class ArticlesController < ApplicationController
     redirect_to articles_path 
   end
   
-
- 
     private
       def article_params
         params.require(:article).permit(:title, :content)

@@ -11,11 +11,18 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(signup_params)
     @account.status = "0" # 用户状态默认为0（激活状态）
-    if @account.save
-      redirect_to accounts_login_path
+    email = signup_params[:email]
+    user = Account.find_by(email: email)
+    if user.nil?
+      if @account.save
+        redirect_to accounts_login_path
+      else
+        render :signup, status: 422
+      end
     else
+      flash[:error] = "Email has been registered."
       render :signup, status: 422
-    end  
+    end 
   end
 
   def login_method

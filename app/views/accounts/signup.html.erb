@@ -2,7 +2,8 @@
 <div class="container">
     <% if @account.errors.any? %>
         <%= render partial: 'error_msg', locals: { errors: @account.errors } %>
-    <% end %>   
+    <% end %>
+    <p style="color: red;"><%= flash[:error] %></p>    
     <div class="signup-form">
         <h1 style="font-size:33px; margin-bottom:8px; color: #4CAF50;">Registration</h1>
         <%= form_for @account do |f| %>
