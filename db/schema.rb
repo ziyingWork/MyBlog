@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_02_122758) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_09_124712) do
   create_table "accounts", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -31,14 +31,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_122758) do
     t.integer "status"
   end
 
-  create_table "comments", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+  create_table "comments", charset: "utf8", force: :cascade do |t|
     t.integer "account_id"
-    t.integer "post_id"
-    t.integer "status"
+    t.integer "article_id"
+    t.integer "parent_id"
+    t.integer "answer_id"
     t.text "content"
-    t.integer "as_type"
-    t.integer "re_comment_id"
-    t.integer "re_reply_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

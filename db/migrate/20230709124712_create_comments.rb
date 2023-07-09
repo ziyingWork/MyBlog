@@ -2,12 +2,10 @@ class CreateComments < ActiveRecord::Migration[7.0]
   def change
     create_table :comments do |t|
       t.integer :account_id
-      t.integer :post_id
-      t.integer :status
+      t.integer :article_id
+      t.integer :parent_id
+      t.integer :answer_id
       t.text :content
-      t.integer :as_type
-      t.integer :re_post_id
-      t.integer :re_account_id
 
       t.timestamps
     end

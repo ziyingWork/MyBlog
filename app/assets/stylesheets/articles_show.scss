@@ -97,10 +97,47 @@
 
   
   .comment-content .st-in {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .comment-content .st-submit {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .st-separator {
+    border-top: 2px solid #1e9c10;
+  }
+
+  .show-comment {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .show-comment .show-in {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  // .st-main {
+  //   display: inline-block;
+  //   border: 2px solid #1e9c10;
+  //   border-radius: 8px;
+  // }
+
+  .st-card-in {
+    display: flex;
+  }
+
+  .card-content {
+    flex: 1;
+  }
+
+  .st-other {
     display: flex;
     justify-content: flex-end;
   }

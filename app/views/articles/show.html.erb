@@ -32,17 +32,40 @@
               <div class="st-in">
                 <%= text_area_tag :comment, "",placeholder: "Please enter your comments", class: "form-control", rows: 4%>
               </div>
+              <div id="st-exception" class="alert alert-warning" role="alert" style="display: none;">
+                Comment content is empty!
+              </div>  
               <div class="st-in st-submit">
-                <%= submit_tag  "Add Comment", class: "btn btn-outline-success", 
+                <%= submit_tag  "Add Comment", id: "submit-comment", class: "btn btn-outline-success", 
                 style: "--bs-btn-padding-y: .5rem; --bs-btn-padding-x: 1.1rem; --bs-btn-font-size: .9rem;" %>
               </div>
             <% end %>
-            
+              <div class="st-separator"></div>
           </div>
-          
-          
         </div>
-      
+
+        <div class="show-comment">
+          <div class="show-in">
+            <div class="card border-success mb-3" style="width: 24rem;">
+              <div class="card-body text-success">
+                <p class="card-text" style="font-size: 10px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="st-card-in">
+                  <div class="card-content">
+                    <h6>Name | 2023-7-10</h6>
+                  </div>
+                  <div class="card-content st-other">
+                    <button type="button" class="btn btn-outline-info"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                            Reply
+                    </button>
+                  </div>
+                <div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       <div>
 
     </div> 
@@ -50,4 +73,17 @@
 </div>
 
 
+
 <%= stylesheet_link_tag 'articles_show' %>
+
+<script>
+document.getElementById("submit-comment").addEventListener("click", function(event) {
+  const textarea = document.getElementById('comment');
+  const commentValue = textarea.value.trim();
+  if (commentValue === '') {
+    document.getElementById('st-exception').style.display = 'block';
+    event.preventDefault(); // 阻止表单的默认提交行为
+  } 
+});
+
+</script>
