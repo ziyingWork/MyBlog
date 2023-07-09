@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/articles/:id/comments', to: 'posts#create_comment' , as: 'create_comment'
   get 'accounts/signup', to: 'accounts#signup'
   get 'accounts/login', to: 'accounts#login'
   post 'login_method', to: 'accounts#login_method'

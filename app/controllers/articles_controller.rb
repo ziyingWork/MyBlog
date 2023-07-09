@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    # @comment = Comment.new
   end  
 
   def new
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.account_id = session[:account_id] 
     if @article.save
       redirect_to @article
     else

@@ -90,4 +90,17 @@
     margin-bottom: 2%;
   }
   
+  .comment-content {
+    display: flex;
+    flex-direction: column;
+  }
+
   
+  .comment-content .st-in {
+    margin-bottom: 10px;
+  }
+
+  .comment-content .st-submit {
+    display: flex;
+    justify-content: flex-end;
+  }

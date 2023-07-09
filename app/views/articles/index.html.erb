@@ -51,11 +51,11 @@
                 <h4 style="margin-bottom: 20px;"><%= article.title %></h4>
                 <p style="margin-bottom: 10px;"><%= article.content %></p>
                 <div class="show-acticles-in">
-                  <div class="div1"><%= image_tag("time.svg") %> Release Time </div>
+                  <div class="div1"><%= image_tag("time.svg") %> <%= article.created_at.strftime("%Y-%m-%d") %> </div>
                   <div class="div2"><%= image_tag("visit.svg") %> Number of visits</div>
                   <div class="div3"><%= image_tag("reply.svg") %> Number of reviews</div>
                   <div class="div4"><%= image_tag("category.svg") %> Article Category</div>
-                  <div class="div5"><%= image_tag("user.svg") %> Published by</div>
+                  <div class="div5"><%= image_tag("user.svg") %> <%= article.account.name %> </div>
                   <div class="div6">
                   <%= link_to 'Details', article_path(article), class: 'btn btn-outline-success', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
                   <%= link_to 'Edits', edit_article_path(article), class: 'btn btn-outline-warning', style:"--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %>
